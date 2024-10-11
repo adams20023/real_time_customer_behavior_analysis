@@ -1,0 +1,2 @@
+2024-10-11 19:02:44.458 | INFO     | __main__:setup_indexes:27 - MongoDB indexes created successfully.
+2024-10-11 19:02:44.460 | INFO     | __main__:setup_indexes:32 - MongoDB connection closed.

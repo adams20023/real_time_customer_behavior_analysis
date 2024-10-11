@@ -1,0 +1,24 @@
+[tool.poetry]
+name = "rtcba-data-ingestion"
+version = "0.1.0"
+description = "Data Ingestion for Real-Time Customer Behavior Analysis"
+authors = ["adams <Fonkouadams01@outlook.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+kafka-python = "2.0.2"
+faker = "19.8.1"
+python-dotenv = "1.0.0"
+six = "^1.16.0"
+pymongo = "4.3.3"
+loguru = "0.5.3"
+streamlit = "1.24.1"
+pandas = "1.5.3"
+plotly = "5.15.0"
+watchdog = "^5.0.3"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

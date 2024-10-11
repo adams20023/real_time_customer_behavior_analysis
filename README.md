@@ -61,67 +61,82 @@ streaming data processing, and interactive dashboards.
 
 1. **Clone the Repository**:
 
-   ```bash
-   git clone git@github.com:yourusername/real_time_customer_behavior_analysis.git
-   cd real_time_customer_behavior_analysis
-Set Up Docker Services:
+Usage
+Follow these steps to set up and run the project on your local machine.
+
+1. Clone the Repository:
+
+bash
+Copy code
+git clone git@github.com:yourusername/real_time_customer_behavior_analysis.git
+cd real_time_customer_behavior_analysis
+2. Set Up Docker Services:
+
+Navigate to the docker directory and start all services:
+
 bash
 Copy code
 cd docker
 docker-compose up -d
-cd ..
-Install Dependencies for Each Component:
-Data Ingestion:
+This will start the following services:
+
+MongoDB: for storing customer behavior events.
+Zookeeper: for managing Kafka.
+Kafka: for streaming customer behavior events.
+Spark: for data processing.
+3. Install Dependencies:
+
+For each project component, navigate to the corresponding directory and install the dependencies.
+
+Data Ingestion (Simulates customer behavior and sends events to Kafka):
 bash
 Copy code
 cd data_ingestion
 poetry install
-cd ..
-Data Processing:
+Data Processing (Consumes customer behavior events from Kafka and stores them in MongoDB):
 bash
 Copy code
-cd data_processing
+cd ../data_processing
 poetry install
-cd ..
-Dashboard:
+Dashboard (Visualizes customer behavior data in real-time):
 bash
 Copy code
-cd dashboard
+cd ../dashboard
 poetry install
-cd ..
-Running the Services
-Start Docker Services:
-bash
-Copy code
-cd docker
-docker-compose up -d
-cd ..
-Run Data Ingestion Producer:
+4. Run Data Ingestion:
+
+To start the data ingestion service, navigate to the data_ingestion folder and run the following command:
+
 bash
 Copy code
 cd data_ingestion
 poetry shell
 python producer.py
-Press Ctrl + C to stop.
-Run Data Processing Consumer:
-Open a new terminal tab/window.
+Press Ctrl + C to stop the process.
+
+5. Run Data Processing:
+
+Open another terminal window, and start the data processing service:
 
 bash
 Copy code
 cd data_processing
 poetry shell
 python consumer.py
-Press Ctrl + C to stop.
-Run the Dashboard:
-Open another terminal tab/window.
+This will consume the events from Kafka, process them, and store them in MongoDB. Press Ctrl + C to stop the process.
+
+6. Run the Dashboard:
+
+Open a third terminal window and run the Streamlit dashboard to visualize the data:
 
 bash
 Copy code
 cd dashboard
 poetry shell
 streamlit run app.py
-Access the dashboard at http://localhost:8501.
+This will start the Streamlit dashboard. You can access it in your browser at:
 
+http://localhost:8501
 Project Structure
 
 bash
